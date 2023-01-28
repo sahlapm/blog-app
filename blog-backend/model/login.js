@@ -1,22 +1,15 @@
 const mongoose=require('mongoose');
 const LoginSchema=mongoose.Schema(
     {
-        title: {
+        username: {
             type: String,
             required: true
           },
-        author : {
+        password : {
           type: String,
           required: true
         },
-        category:{
-            type: String,
-            required: true
-          },
-        content : {
-            type: String,
-            required: true
-          }
+       
     }
 );
 var LoginModel=mongoose.model('Logins',LoginSchema);
