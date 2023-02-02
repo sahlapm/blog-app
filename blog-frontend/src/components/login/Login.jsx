@@ -16,7 +16,7 @@ const userAuthentication = ()=>{
     "username":username,
     "password":password
   }
-  axios.post(`http://localhost:8082/login/`,
+  axios.post(`/api/login/read`,
   userData
   ).then((getData)=>{
    if(getData.data)
@@ -68,7 +68,7 @@ navigate('/read');
   
                         <button type="button" className="btn btn-secondary btn-lg">Cancel</button>
                      
-                        <button onClick={userAuthentication} type="submit" className="btn btn-secondary btn-lg ms-2">Login</button>
+                        <button onClick={userAuthentication} type="button" className="btn btn-secondary btn-lg ms-2">Login</button>
                       </div> 
     </div>
   </form>

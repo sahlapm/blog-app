@@ -15,7 +15,7 @@ const Create = () => {
 
 
   const sendDataToAPI = ()=>{
-  axios.post(`http://localhost:8082/blog/create`,
+  axios.post(`/api/blog/create`,
   {title,
    author,category,content
   }
@@ -85,7 +85,7 @@ const Create = () => {
   <Link to='/read'>
                       <button type="button" className="btn btn-secondary btn-lg">Back</button>
                       </Link>
-                      <button onClick={sendDataToAPI} type="submit" className="btn btn-secondary btn-lg ms-2">Create</button>
+                      <button onClick={sendDataToAPI} type="button" className="btn btn-secondary btn-lg ms-2">Create</button>
                     </div> 
   </div>
 </form>

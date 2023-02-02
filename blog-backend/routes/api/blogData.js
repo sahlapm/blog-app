@@ -2,7 +2,7 @@
 // app.js
 
 const express = require('express');
-const { BlogModel } = require('../model/blog');
+const { BlogModel } = require('../../model/blog');
 const router=express.Router();
 
 
@@ -18,7 +18,7 @@ router.post('/create',async(req,res)=>{
   }
 })
 
-router.get('/',async(req,res)=>{
+router.get('/read',async(req,res)=>{
 try
 {
   const data=await BlogModel.find()

@@ -6,7 +6,7 @@ import Navbar from "../Navbar";
 const Read = () => {
   const [apiData, setApiData] = useState([]);
   useEffect(() => {
-      axios.get('http://localhost:8082/blog/')
+      axios.get('/api/blog/read')
       .then((getData)=>{
           setApiData(getData.data);
          
@@ -14,7 +14,7 @@ const Read = () => {
   },[])
   const getData=()=>
     {
-      axios.get('http://localhost:8082/blog/')
+      axios.get('/api/blog/read')
       .then((getData)=>{
         setApiData(getData.data);
       })
@@ -22,7 +22,7 @@ const Read = () => {
 
     const onDelete=(id)=>
     {
-      axios.delete('http://localhost:8082/blog/delete/'+id)
+      axios.delete('/api/blog/delete/'+id)
       .then(()=>
       {
         getData();

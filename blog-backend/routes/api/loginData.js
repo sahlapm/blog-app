@@ -2,8 +2,11 @@
 // app.js
 
 const express = require('express');
-const {LoginModel } = require('../model/login');
+const bcrpt=require('bcrypt')
+const jwt=require('jsonwebtoken')
+const {LoginModel } = require('../../model/login');
 const router=express.Router();
+
 
 router.post('/create',async(req,res)=>{   
     try
@@ -17,8 +20,7 @@ router.post('/create',async(req,res)=>{
     }
   })
 
-
-router.post('/',async(req,res)=>{
+router.post('/read',async(req,res)=>{
   try {
     const data=await LoginModel.findOne({"username":req.body.username},{"password":req.body})
        

@@ -14,14 +14,14 @@ const Update = () => {
   const navigate=useNavigate();
 
   const sendDataToAPI = ()=>{
-  axios.put(`http://localhost:8082/blog/update/${ID}`,
+  axios.put(`/api/blog/update/${ID}`,
   {title,author,
   category,
   content
   }
   ).then((res)=>{
    
-    console.log(res);
+    navigate('/read');
    })
   }
 
@@ -89,7 +89,7 @@ const Update = () => {
   <Link to='/read'>
                       <button type="button" className="btn btn-secondary btn-lg">Back</button>
                       </Link>
-                      <button onClick={sendDataToAPI} type="submit" className="btn btn-secondary btn-lg ms-2">Update</button>
+                      <button onClick={sendDataToAPI} type="button" className="btn btn-secondary btn-lg ms-2">Update</button>
                     </div> 
   </div>
 </form>
